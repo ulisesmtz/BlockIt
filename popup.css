@@ -1,0 +1,13 @@
+body {
+	min-width: 300px;
+	min-height: 200px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#title {
+	text-align: center;
+}
+
+input[type=number] {
+	width: 40px;
+}
