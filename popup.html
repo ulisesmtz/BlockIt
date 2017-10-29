@@ -2,6 +2,8 @@
 <html>
 
 	<head>
+		<script src="jquery-3.2.1.min.js"></script>
+		<script src="popup.js"></script>
 		<link rel="stylesheet" type="text/css" href="popup.css">
 	</head>
 	
@@ -10,16 +12,37 @@
 			<h2>BlockIt</h2>
 		</div>
 		
+		<div id="timerCheckbox">
+			<input id="toggleTimer" type="checkbox" checked>Timer?</input>
+		</div>
+		
 		<div id="timer">
-		<form>
-			H:<input type="number" name="hours" min="0" max="24" value="0">
-			M:<input type="number" name="mins" min="0" max="59" value="0">
-			S:<input type="number" name="secs" min="0" max="59" value="0">
-			<input type="button" value="Start!" onclick="">
-			<input type="reset" value="Reset">
+			<form>
+				H:<input type="number" id="hours" min="0" max="24" value="0">
+				M:<input type="number" id="mins" min="0" max="59" value="0">
+				S:<input type="number" id="secs" min="0" max="59" value="0">
+				<button id="startButton" value="Start">Start!</button>
+				<button type="reset" value="Reset">Reset</button>
 			</form>
 		</div>
+		
+		<br><br>
+		
+		Blocked Sites:
+		<select name="blockedSites">
+			<option value="---">---</option>
+			<option value="yahoo">www.yahoo.com</option>
+			<option value="google">www.google.com</option>
+		</select>
+		
+		<button id="removeSite" value="remove">Remove</button>
+		
+		<br><br>
+		
+		Site to block:<input type="text" name="addSite">
+		<button id="addSite" value="add">Block</button>
+		
 	</body>
 
-
+	
 </html>
