@@ -1,23 +1,23 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title>Title goes here</title>
-</head>
+	<head>
+		<title>Title goes here</title>
+		<script src="jquery-3.2.1.min.js"></script>
+		<script src="options.js"></script>
+	</head>
 
-<body>
-	Blocked Sites:
-	<select name="blockedSites">
-		<option value="---">---</option>
-		<option value="yahoo">www.yahoo.com</option>
-		<option value="google">www.google.com</option>
-	</select>
-	
-	<button id="removeSite" value="remove">Remove</button>
-	
-	<br><br>
-	
-	Site to block:<input type="text" name="addSite">
-	<button id="addSite" value="add">Block</button>
-	
-</body>
+
+	<body>
+		<div id="blockedContainer">
+
+			<input type="text" id="candidate"/>
+			<button id="addItem">Add Site</button>
+			<button id="removeItem">Remove Site</button>
+			<ul id="dynamic-list"></ul>
+			
+		</div>
+		
+		
+	</body>
 
 </html>
