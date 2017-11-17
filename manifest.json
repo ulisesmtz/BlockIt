@@ -10,8 +10,9 @@
   },
   
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
+	"alarms",
+	"storage",
+	"notifications",
 	"<all_urls>"
   ],
 
