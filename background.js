@@ -1,10 +1,12 @@
-/*chrome.webRequest.onBeforeRequest.addListener(
-	function(details) {
-		return {redirectUrl: "www.yahoo.com"}; 
+chrome.webRequest.onBeforeRequest.addListener(
+	function(details){
+		//return {cancel:true};}, // to block page
+		chrome.tabs.update(details.tabId, {url: "blocked.html"});
 	},
-	{urls: ["<all_urls>"]},
+	{urls:["*://*.google.com/", "*://*.yahoo.com/"]},
 	["blocking"]
-);*/
+);
+  
 var interval;
 var timeout;
 var alarmDate;
@@ -41,8 +43,8 @@ function ring() {
 	shutAlarmOff();
 }
 
-function getTimeLeftString() {
-	
+function getTimeLeft() {
+	return alarmDate.getTime() - new Date().getTime();
 }
 
 function shutAlarmOff() {

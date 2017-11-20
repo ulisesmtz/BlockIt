@@ -5,14 +5,15 @@
   "version": "0.1",
   
   "background": {
-	"scripts":["background.js"],
-	"persistent": true
+	"scripts":["background.js"]
   },
   
   "permissions": [
 	"alarms",
 	"storage",
 	"notifications",
+	"webRequest",
+	"webRequestBlocking",
 	"<all_urls>"
   ],
 
