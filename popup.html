@@ -2,9 +2,9 @@
 <html>
 
 	<head>
-		<script src="jquery-3.2.1.min.js"></script>
-		<script src="popup.js"></script>
-		<link rel="stylesheet" type="text/css" href="popup.css">
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/popup.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/popup.css">
 	</head>
 	
 	<body>
@@ -12,17 +12,11 @@
 			<h2>BlockIt</h2>
 		</div>
 		
-		<div id="timerCheckbox">
-			<input id="toggleTimer" type="checkbox" checked>Timer?</input>
-		</div>
-		
 		<div class="timer" id="timer">
 			
 			H:<input type="number" id="hours" min="0" max="24" value="0">
 			M:<input type="number" id="mins" min="0" max="59" value="0">
 			S:<input type="number" id="secs" min="0" max="59" value="0">
-			<button id="startButton" value="Start">Start</button>
-			<button id="resetButton" type="reset" value="Reset">Reset</button>
 			
 			<br><br>		
 
@@ -38,7 +32,10 @@
 				<div class="time" id="timeS">00</div>
 				<span class="text">secs</span>
 			</div>
-			
+			<br>
+			<button class="button start" id="startButton" value="Start">&#9654</button>
+			<!--<button class="button pause" id="pauseButton" value="Pause">&#10074&#10074</button>-->
+			<button class="button reset" id="resetButton" type="reset" value="Reset">&#9724</button>
 			
 			
 		</div>
