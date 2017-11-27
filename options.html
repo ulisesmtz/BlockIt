@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Title goes here</title>
+		<title>Manage Blocked Sites</title>
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/options.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/options.css">
 	</head>
 
 	<body>
-		<div id="blockedContainer">
+		<button value="Add" class="addRow">Add</button>
 
-			<input type="text" id="candidate"/>
-			<button id="addItem">Add Site</button>
-			<button id="removeItem">Remove Site</button>
-			<ul id="dynamic-list"></ul>
-			
-		</div>
+		<table id="table">
+			<tr>
+				<th><input type="checkbox" id="selectAll"/>Select All</th>
+				<th>URL to be Blocked (Regex Accepted)</th>
+				<th>Action</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="checkRow"/></td>
+				<td>https://www.google.com</td>
+				<td><button value="Delete" class="deleteRow">Delete</button></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="checkRow"/></td>
+				<td>https://www.yahoo.com</td>
+				<td><button value="Delete" class="deleteRow">Delete</button></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="checkRow"/></td>
+				<td>https://www.stackoverflow.com</td>
+				<td><button value="Delete" class="deleteRow">Delete</button></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="checkRow"/></td>
+				<td>https://www.facebook.com</td>
+				<td><button value="Delete" class="deleteRow">Delete</button></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="checkRow"/></td>
+				<td>https://www.twitter.com</td>
+				<td><button value="Delete" class="deleteRow">Delete</button></td>
+			</tr>
+		</table>
 		
+		<button value="Delete Selected" class="deleteSelected">Delete Selected</button>		
 		
 	</body>
 
