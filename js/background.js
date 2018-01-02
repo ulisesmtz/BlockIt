@@ -49,11 +49,18 @@ function shutAlarmOff() {
     //pauseDate = null;
 }
 
+var callBack = function(details) {
+	if (chrome.runtime.lastError) {
+		alert(chrome.runtime.lastError.message);
+		return;
+	} else if (JSON.parse(localStorage.getItem("blockedURL")).length > 0){
+		return {redirectUrl: (chrome.extension.getURL("blocked.html"))}
+	}
+} 
+
 chrome.webRequest.onBeforeRequest.addListener(
-	function(details){
-		chrome.tabs.update(details.tabId, {url: "blocked.html"});
-	},
-	{urls:["*://*.google.com/", "*://*.amazon.com/"]},
+	callBack,
+	{urls: JSON.parse(localStorage.getItem("blockedURL"))},
 	["blocking"]
 );
   
@@ -65,4 +72,19 @@ chrome.notifications.onButtonClicked.addListener(function(notifId, btnIdx) {
 			alert("Nope");
         }
     }
+});
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+	if (request.type == "update") {
+		var blockedUrl = JSON.parse(localStorage.getItem("blockedURL"));
+		if (blockedUrl.length > 0 && blockedUrl != null) {
+			chrome.webRequest.onBeforeRequest.removeListener(callBack);
+			chrome.webRequest.onBeforeRequest.addListener(
+				callBack,
+				{urls: blockedUrl},
+				["blocking"]
+			);
+		}
+	}
+	sendResponse({type: "bar"});
 });

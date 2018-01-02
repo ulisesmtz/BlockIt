@@ -15,3 +15,7 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+.redBorder {
+	border: 3px solid red;
+}
